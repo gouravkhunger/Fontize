@@ -1,6 +1,12 @@
 <div align="center">
 <h1>Fontize Android Library</h1>
 
+<a href="https://android-arsenal.com/api?level=16" target="blank">
+    <img src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat" alt="Fontize Android Library Licence" />
+</a>
+<a href="https://jitpack.io/#GouravKhunger/Fontize" target="blank">
+    <img src="https://jitpack.io/v/GouravKhunger/Fontize.svg" alt="Fontize Android Library Licence" />
+</a>
 <a href="https://github.com/gouravkhunger/Fontize/blob/main/LICENSE" target="blank">
     <img src="https://img.shields.io/github/license/gouravkhunger/Fontize" alt="Fontize Android Library Licence" />
 </a>
@@ -20,10 +26,6 @@
         <a href="https://github.com/gouravkhunger">Gourav Khunger</a>
     </sub>
 </div>
-
-[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)
-[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
-[![](https://jitpack.io/v/GouravKhunger/Fontize.svg)](https://jitpack.io/#GouravKhunger/Fontize)
 
 Fontize is an Android library, written in kotlin, that enables your android app have multiple fonts for your `TextView`s
 and switch  between them in a jiffy!
