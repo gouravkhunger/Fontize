@@ -27,6 +27,8 @@
     </sub>
 </div>
 
+<br />
+
 Fontize is an Android library, written in kotlin, that enables your android app have multiple fonts for your `TextView`s
 and switch  between them in a jiffy!
 
