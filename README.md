@@ -25,10 +25,12 @@
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![](https://jitpack.io/v/GouravKhunger/Fontize.svg)](https://jitpack.io/#GouravKhunger/Fontize)
 
-Fontize is an Android library, written in kotlin, that enables your android app have multiple fonts for your `TextViews`
+Fontize is an Android library, written in kotlin, that enables your android app have multiple fonts for your `TextView`s
 and switch  between them in a jiffy!
 
-![Fontize Android Library Demo GIF](https://github.com/gouravkhunger/Fontize/tree/main/media/demo.gif)
+A quick demo:
+
+![Fontize Android Library Demo GIF](https://raw.githubusercontent.com/gouravkhunger/Fontize/main/media/demo.gif)
 
 ### Adding Fontize to your project
 
@@ -59,6 +61,28 @@ Make sure you have all your fonts in the `res/font/` directory. Support for font
 
 Rename all the `TextView`s or `AppCompatTextView`s in your project to `com.github.gouravkhunger.fontize.FontizeTextView` - You don't have to change anything else, and the view would still perform the same :)
 
+Before:
+
+```
+<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_font_to"
+            android:layout_marginTop="150dp"
+            android:textSize="18sp"/>
+```
+
+After:
+
+```
+<com.github.gouravkhunger.fontize.FontizeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_font_to"
+            android:layout_marginTop="150dp"
+            android:textSize="18sp"/>
+```
+
 To set up a default font for the `TextView`s that should load at the startup, add this line to the beginning of your launcher activity:
 
 ```
@@ -75,6 +99,10 @@ Fontize(this).updateFont(R.font.zen_old_mincho)
 
 - `this` must be an Acitvity or Application context.
 - This requires recreation of the activity, which can be done by `recreate()`, or prompt the user to relaunch the app to make the changes take effect.
+
+### How it works?
+
+Fontize saves the resource ID of the font you provide to `SharedPreferences`. It extends `AppCompatTextView` class to inherit all the properties of a `TextView`, but overrides the default inflating behaviour. It applies the typography when the view is inflated.
 
 ### Only `TextViews`?
 I'll try to add support for other views in the future. Contributions are always welcome.
@@ -113,5 +141,5 @@ There are some fonts used in the demo app, their licenses are available [here](h
 ---
 
 <div align="center">
-JekyllEx needs a ⭐ from you =)
+Fontize needs a ⭐ from you =)
 </div>
