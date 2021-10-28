@@ -32,7 +32,7 @@ A quick demo:
 
 ![Fontize Android Library Demo GIF](https://raw.githubusercontent.com/gouravkhunger/Fontize/main/media/demo.gif)
 
-### Adding Fontize to your project
+## Adding Fontize to your project
 
 Include jitpack in your root `build.gradle` file.
 
@@ -55,7 +55,7 @@ dependencies {
 
 Sync the project and you'll have imported Fontize successfully.
 
-### Start using Fontize
+## Start using Fontize
 
 Make sure you have all your fonts in the `res/font/` directory. Support for font files in the `assets` folder will ship soon!
 
@@ -100,7 +100,7 @@ Fontize(this).updateFont(R.font.zen_old_mincho)
 - `this` must be an Acitvity or Application context.
 - This requires recreation of the activity, which can be done by `recreate()`, or prompt the user to relaunch the app to make the changes take effect.
 
-### How it works?
+## How it works?
 
 Fontize saves the resource ID of the font you provide to `SharedPreferences`. It extends `AppCompatTextView` class to inherit all the properties of a `TextView`, but overrides the default inflating behaviour. It applies the typography when the view is inflated.
 
@@ -108,7 +108,7 @@ Fontize saves the resource ID of the font you provide to `SharedPreferences`. It
 I'll try to add support for other views in the future. Contributions are always welcome.
 
 
-### 🛡 License
+## 🛡 License
 
 This project is [`MIT`](https://github.com/jekyllex/jekyllex-android/blob/main/LICENSE) Licensed.
 
