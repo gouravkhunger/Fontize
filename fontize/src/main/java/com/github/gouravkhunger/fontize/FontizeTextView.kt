@@ -30,7 +30,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.preference.PreferenceManager
 
-class FontizeView(
+class FontizeTextView(
     context: Context,
     attrs: AttributeSet
 ) : AppCompatTextView(context, attrs) {

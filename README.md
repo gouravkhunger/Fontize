@@ -1,4 +1,117 @@
-# Fontize
+<div align="center">
+<h1>Fontize Android Library</h1>
 
-Fontize is an Android library that enables your android app have multiple fonts for your `TextViews`
+<a href="https://github.com/gouravkhunger/Fontize/blob/main/LICENSE" target="blank">
+    <img src="https://img.shields.io/github/license/gouravkhunger/Fontize" alt="Fontize Android Library Licence" />
+</a>
+<a href="https://github.com/gouravkhunger/Fontize/stargazers" target="blank">
+    <img src="https://img.shields.io/github/stars/gouravkhunger/Fontize" alt="Fontize Android Library Stars"/>
+</a>
+<a href="https://github.com/gouravkhunger/Fontize/fork" target="blank">
+    <img src="https://img.shields.io/github/forks/gouravkhunger/Fontize" alt="Fontize Android Library Forks"/>
+</a>
+<a href="https://github.com/gouravkhunger/Fontize/issues" target="blank">
+    <img src="https://img.shields.io/github/issues/gouravkhunger/Fontize" alt="Fontize Android Library Issues"/>
+</a>
+</div>
+
+<div align="center">
+    <sub>Built with ❤︎ by
+        <a href="https://github.com/gouravkhunger">Gourav Khunger</a>
+    </sub>
+</div>
+
+[![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)](LICENSE)
+[![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[![](https://jitpack.io/v/GouravKhunger/Fontize.svg)](https://jitpack.io/#GouravKhunger/Fontize)
+
+Fontize is an Android library, written in kotlin, that enables your android app have multiple fonts for your `TextViews`
 and switch  between them in a jiffy!
+
+![Fontize Android Library Demo GIF](https://github.com/gouravkhunger/Fontize/tree/main/media/demo.gif)
+
+### Adding Fontize to your project
+
+Include jitpack in your root `build.gradle` file.
+
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+And add it's dependency to your app level `build.gradle` file:
+
+```
+dependencies {
+	    implementation 'com.github.gouravkhunger:Fontize:1.0.0'
+}
+```
+
+Sync the project and you'll have imported Fontize successfully.
+
+### Start using Fontize
+
+Make sure you have all your fonts in the `res/font/` directory. Support for font files in the `assets` folder will ship soon!
+
+Rename all the `TextView`s or `AppCompatTextView`s in your project to `com.github.gouravkhunger.fontize.FontizeTextView` - You don't have to change anything else, and the view would still perform the same :)
+
+To set up a default font for the `TextView`s that should load at the startup, add this line to the beginning of your launcher activity:
+
+```
+Fontize(this).setDefaultFont(R.font.irish_grover) // replace with your own font
+```
+
+To update the font for all of your app, simple call this line from anywhere inside the app:
+
+```
+Fontize(this).updateFont(R.font.zen_old_mincho)
+```
+
+**Note**:
+
+- `this` must be an Acitvity or Application context.
+- This requires recreation of the activity, which can be done by `recreate()`, or prompt the user to relaunch the app to make the changes take effect.
+
+### Only `TextViews`?
+I'll try to add support for other views in the future. Contributions are always welcome.
+
+
+### 🛡 License
+
+This project is [`MIT`](https://github.com/jekyllex/jekyllex-android/blob/main/LICENSE) Licensed.
+
+```
+MIT License
+
+Copyright (c) 2021 Gourav Khunger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+There are some fonts used in the demo app, their licenses are available [here](https://github.com/gouravkhunger/Fontize/tree/main/font-licenses).
+
+---
+
+<div align="center">
+JekyllEx needs a ⭐ from you =)
+</div>
