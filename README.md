@@ -40,20 +40,20 @@ A quick demo:
 
 Include jitpack in your root `build.gradle` file.
 
-```
+```gradle
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
 }
 ```
 
 And add it's dependency to your app level `build.gradle` file:
 
-```
+```gradle
 dependencies {
-	    implementation 'com.github.gouravkhunger:Fontize:1.0.0'
+    implementation "com.github.gouravkhunger:Fontize:1.0.0"
 }
 ```
 
@@ -67,36 +67,36 @@ Rename all the `TextView`s or `AppCompatTextView`s in your project to `com.githu
 
 Before:
 
-```
+```xml
 <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/switch_font_to"
-            android:layout_marginTop="150dp"
-            android:textSize="18sp"/>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/switch_font_to"
+    android:layout_marginTop="150dp"
+    android:textSize="18sp"/>
 ```
 
 After:
 
-```
+```xml
 <com.github.gouravkhunger.fontize.FontizeTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/switch_font_to"
-            android:layout_marginTop="150dp"
-            android:textSize="18sp"/>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/switch_font_to"
+    android:layout_marginTop="150dp"
+    android:textSize="18sp"/>
 ```
 
 To set up a default font for the `TextView`s that should load at the startup, add this line to the beginning of your launcher activity:
 
-```
-Fontize(this).setDefaultFont(R.font.irish_grover) // replace with your own font
+```kotlin
+Fontize(this).setDefaultFont(R.font.exo_2) // replace with the font you desire
 ```
 
 To update the font for all of your app, simple call this line from anywhere inside the app:
 
-```
-Fontize(this).updateFont(R.font.zen_old_mincho)
+```kotlin
+Fontize(this).updateFont(R.font.zen_old_mincho) // updates fontFamily of all the TextViews throughout app
 ```
 
 **Note**:
