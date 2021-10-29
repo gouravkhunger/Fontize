@@ -77,22 +77,29 @@
             android:textSize="18sp"/>
 
         <Button
-            android:id="@+id/switchToIrish"
+            android:id="@+id/switchToExo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/irish_grover" />
+            android:layout_marginTop="10dp"
+            android:text="@string/exo_2" />
 
         <Button
-            android:id="@+id/switchToSourceCode"
+            android:id="@+id/switchToSourceCodePro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/source_code_pro" />
 
         <Button
-            android:id="@+id/switchZenOld"
+            android:id="@+id/switchToZenOldMicho"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zen_old_micho" />
+
+        <Button
+            android:id="@+id/switchToLobster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lobster" />
 
     </LinearLayout>
 </LinearLayout>

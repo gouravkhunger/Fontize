@@ -36,22 +36,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Fontize(this).setDefaultFont(R.font.irish_grover)
+        Fontize(this).setDefaultFont(R.font.exo_2)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.apply {
-            switchToIrish.setOnClickListener {
-                Fontize(this@MainActivity).updateFont(R.font.irish_grover)
+            switchToExo2.setOnClickListener {
+                Fontize(this@MainActivity).updateFont(R.font.exo_2)
                 recreate()
             }
-            switchToSourceCode.setOnClickListener {
+            switchToSourceCodePro.setOnClickListener {
                 Fontize(this@MainActivity).updateFont(R.font.source_code_pro)
                 recreate()
             }
-            switchZenOld.setOnClickListener {
+            switchToZenOldMicho.setOnClickListener {
                 Fontize(this@MainActivity).updateFont(R.font.zen_old_mincho)
+                recreate()
+            }
+            switchToLobster.setOnClickListener {
+                Fontize(this@MainActivity).updateFont(R.font.lobster)
                 recreate()
             }
         }

@@ -2,7 +2,8 @@
     <string name="app_name">Fontize</string>
     <string name="hello_world">Hello World!</string>
     <string name="switch_font_to">Switch font to:</string>
-    <string name="irish_grover">Irish Grover</string>
+    <string name="exo_2">Exo 2</string>
     <string name="source_code_pro">Source Code Pro</string>
     <string name="zen_old_micho">Zen Old Micho</string>
+    <string name="lobster">Lobster</string>
 </resources>
