@@ -114,7 +114,7 @@ I'll try to add support for other views in the future. Contributions are always 
 
 ## 🛡 License
 
-This project is [`MIT`](https://github.com/jekyllex/jekyllex-android/blob/main/LICENSE) Licensed.
+This project is [`MIT`](https://github.com/gouravkhunger/Fontize/blob/main/LICENSE) Licensed.
 
 ```
 MIT License
