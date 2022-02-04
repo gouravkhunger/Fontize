@@ -34,7 +34,9 @@ and switch  between them in a jiffy!
 
 A quick demo:
 
-![Fontize Android Library Demo GIF](https://raw.githubusercontent.com/gouravkhunger/Fontize/main/media/demo.gif)
+<div align="center">
+    <img src="https://raw.githubusercontent.com/gouravkhunger/Fontize/main/media/demo.gif" alt="Fontize Android Library Demo GIF" height="500" />
+</div>
 
 ## Adding Fontize to your project
 
