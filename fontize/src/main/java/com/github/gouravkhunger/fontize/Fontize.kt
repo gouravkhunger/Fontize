@@ -26,15 +26,58 @@ package com.github.gouravkhunger.fontize
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
+import android.util.Log
 import androidx.core.content.res.ResourcesCompat
-import androidx.preference.PreferenceManager
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
+import java.lang.Exception
+import java.util.*
 
 class Fontize(private val context: Context) {
 
+    private var preferenceName = "Preference"
     private lateinit var sharedPref: SharedPreferences
 
+    private fun getMasterKey(): MasterKey? {
+        try {
+            val spec = KeyGenParameterSpec.Builder(
+                "_androidx_security_master_key_",
+                KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+            )
+                .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
+                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+                .setKeySize(256)
+                .build()
+            return MasterKey.Builder(context)
+                .setKeyGenParameterSpec(spec)
+                .build()
+        } catch (e: Exception) {
+            Log.e(javaClass.simpleName, "Error on getting master key", e)
+        }
+        return null
+    }
+
+    private fun getEncryptedSharedPreferences(): SharedPreferences? {
+        try {
+            return getMasterKey()?.let {
+                EncryptedSharedPreferences.create(
+                    Objects.requireNonNull(context),
+                    preferenceName,
+                    it,  // calling the method above for creating MasterKey
+                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+                )
+            }
+        } catch (e: Exception) {
+            Log.e(javaClass.simpleName, "Error on getting encrypted shared preferences", e)
+        }
+        return null
+    }
+
     fun setDefaultFont(resourceId: Int) {
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        sharedPref = getEncryptedSharedPreferences()!!
         val fontId = sharedPref.getInt("fontFamily", ResourcesCompat.ID_NULL)
 
         if (fontId == ResourcesCompat.ID_NULL) {
@@ -45,9 +88,14 @@ class Fontize(private val context: Context) {
     }
 
     fun updateFont(resourceId: Int) {
-        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        sharedPref = getEncryptedSharedPreferences()!!
         sharedPref.edit()
             .putInt("fontFamily", resourceId)
             .apply()
     }
+
+    fun getStringPreference(key: String?): Int {
+        return getEncryptedSharedPreferences()!!.getInt(key, ResourcesCompat.ID_NULL)
+    }
+
 }
