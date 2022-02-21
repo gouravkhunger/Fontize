@@ -33,7 +33,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import java.lang.Exception
-import java.util.*
+import java.util.Objects
 
 class Fontize(private val context: Context) {
 
@@ -65,7 +65,7 @@ class Fontize(private val context: Context) {
                 EncryptedSharedPreferences.create(
                     Objects.requireNonNull(context),
                     preferenceName,
-                    it,  // calling the method above for creating MasterKey
+                    it, // calling the method above for creating MasterKey
                     EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
                     EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
                 )
@@ -97,5 +97,4 @@ class Fontize(private val context: Context) {
     fun getStringPreference(key: String?): Int {
         return getEncryptedSharedPreferences()!!.getInt(key, ResourcesCompat.ID_NULL)
     }
-
 }

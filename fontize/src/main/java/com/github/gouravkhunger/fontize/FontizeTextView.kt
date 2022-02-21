@@ -28,7 +28,6 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
-import androidx.preference.PreferenceManager
 
 class FontizeTextView(
     context: Context,
