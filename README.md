@@ -1,8 +1,8 @@
 <div align="center">
 <h1>Fontize Android Library</h1>
 
-<a href="https://android-arsenal.com/api?level=16" target="blank">
-    <img src="https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat" alt="Fontize Android Library Licence" />
+<a href="https://android-arsenal.com/api?level=23" target="blank">
+    <img src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat" alt="Fontize Android Library Licence" />
 </a>
 <a href="https://jitpack.io/#GouravKhunger/Fontize" target="blank">
     <img src="https://jitpack.io/v/GouravKhunger/Fontize.svg" alt="Fontize Android Library Licence" />
@@ -55,7 +55,7 @@ And add it's dependency to your app level `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation "com.github.gouravkhunger:Fontize:1.0.0"
+    implementation "com.github.gouravkhunger:Fontize:1.0.1"
 }
 ```
 
