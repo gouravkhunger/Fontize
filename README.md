@@ -106,7 +106,7 @@ Fontize(this).updateFont(R.font.zen_old_mincho) // updates fontFamily of all the
 - `this` must be an Acitvity or Application context.
 - This requires recreation of the activity, which can be done by `recreate()`, or prompt the user to relaunch the app to make the changes take effect.
 
-## How does it works?
+## How does it work?
 
 Fontize saves the resource ID of the font you provide to `SharedPreferences`. It extends `AppCompatTextView` class to inherit all the properties of a `TextView`, but overrides the default inflating behaviour. It applies the typography when the view is inflated.
 
